@@ -27,6 +27,25 @@ def handle_client(client_socket, addr):
                 
                 # Echo back data
                 client_socket.send(f"Echo: {pwd}".encode('utf-8'))
+                choice_of_user=client_socket.recv(1024).decode('utf-8')
+                if choice_of_user=='1':
+                    print("yayy file recieved")
+                    # recv_file()
+                elif choice_of_user=='2':
+                    print("yayy file download")
+                    # recv_file()
+                elif choice_of_user=='3':
+                    print("yayy file view")
+                    # recv_file()
+                elif choice_of_user=='4':
+                    print("yayy file delete")
+                    # recv_file()
+                elif choice_of_user=='5':
+                    print("yayy file list")
+                    # recv_file()
+                elif choice_of_user=='6':
+                    print("yayy file exit")
+                    # recv_file()
         else:
             client_socket.send("Invalid handshake".encode('utf-8'))
             print(f"[HANDSHAKE FAILED] Handshake failed with {addr}")
