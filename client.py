@@ -1,4 +1,28 @@
 import socket
+import os
+
+def upload_file():
+    count = 0
+    while True:
+        count += 1
+        file_name = input("Enter the file location (or type 'exit' to quit): ")
+        if file_name.lower() == 'exit':
+            print("Exiting the client.")
+            break
+
+        file_size = os.path.getsize(file_name)
+        file_ext = input("Enter the extension of the file: ")
+        recv_file_name = "received_file" + str(count) + file_ext
+
+        client_socket.send(recv_file_name.encode())
+        client_socket.send(str(file_size).encode())
+
+        with open(file_name, "rb") as file:
+            while (data := file.read(1024)):
+                client_socket.send(data)
+
+        client_socket.send(b"<END>")
+        print(f"{file_name} has been sent successfully.")
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect(('127.0.0.1', 12345))
@@ -24,6 +48,7 @@ if response == "ACK":
             if choice == '1':
                 # upload()
                 client_socket.send(choice.encode('utf-8'))
+                upload_file()
                 pass
             elif choice == '2':
                 client_socket.send(choice.encode('utf-8'))
