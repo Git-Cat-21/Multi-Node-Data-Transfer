@@ -21,7 +21,7 @@ def handle_client(client_socket, addr):
                     if i.split(":")[0] == data:
                         pwd = i.split(":")[1]
                 print(pwd)
-                if not data:  # No data means client disconnected
+                if not data:
                     break
                 print(f"Received from [{addr}]: {data}")
                 
@@ -45,7 +45,6 @@ def start_server():
         client_thread = threading.Thread(target=handle_client, args=(client_socket, addr))
         client_thread.start()
 
-        # Optional: Keep track of threads
         print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
 
 start_server()
