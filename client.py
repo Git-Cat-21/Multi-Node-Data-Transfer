@@ -25,7 +25,7 @@ def upload_file():
         print(f"{file_name} has been sent successfully.")
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client_socket.connect(('127.0.0.1', 12345))
+client_socket.connect(('127.0.0.1', 8888))
 
 # Initial handshake
 client_socket.send("HELLO".encode('utf-8'))
@@ -41,36 +41,29 @@ if response == "ACK":
 
     if pwd_check[1].strip() == pwd.strip():
         print("Login successful")
+        client_socket.send("Password Match".encode("utf-8"))
 
         while True:
             print("1.Upload\t2.Download\t3.View\t4.Delete\t5.List\t6.Exit : ")
             choice = input("Enter your choice:")
             if choice == '1':
-                # upload()
                 client_socket.send(choice.encode('utf-8'))
                 upload_file()
-                pass
             elif choice == '2':
                 client_socket.send(choice.encode('utf-8'))
-                pass
             elif choice == '3':
                 client_socket.send(choice.encode('utf-8'))
-                pass
             elif choice == '4':
                 client_socket.send(choice.encode('utf-8'))
-                pass
             elif choice == '5':
                 client_socket.send(choice.encode('utf-8'))
-                pass
             elif choice == '6':
-                client_socket.send(choice.encode('utf-8'))
-                break
+                    break
             else:
                 print("Wrong choice. Please try again!")
     else:
-            print("Not matched")
+        print("Login failed: Password does not match.")
 else:
     print("Handshake failed")
 
 client_socket.close()
-
