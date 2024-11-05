@@ -18,7 +18,7 @@ def recv_file(client_socket, addr):
             if b"<END>" in data:
                 data = data.replace(b"<END>", b"")
                 file.write(data)
-                bytes_received += len(data)
+                # bytes_received += len(data)
                 break
             file.write(data)
                 
