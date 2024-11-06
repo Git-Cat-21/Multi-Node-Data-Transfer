@@ -1,32 +1,41 @@
 import socket
 import threading
 import os
+import struct
 
 def recv_file(client_socket, addr, user_dir):
     while True:
-        file_name = client_socket.recv(1024).decode()
-        if not file_name:
-            break
-        print("Receiving file:", file_name)
+        try:
+            name_len_data = client_socket.recv(4)
+            if not name_len_data:
+                break
+            name_len = struct.unpack("I", name_len_data)[0]
+            
+            file_name = client_socket.recv(name_len).decode()
+            print("Receiving file:", file_name)
 
-        file_path = os.path.join(user_dir, file_name)
-        print("File path:", file_path)
+            file_path = os.path.join(user_dir, file_name)
+            print("File path:", file_path)
 
-        file_size = int(client_socket.recv(1024).decode())
-        print("File size:", file_size)
+            file_size_data = client_socket.recv(8)
+            file_size = struct.unpack("Q", file_size_data)[0]
+            print("File size:", file_size)
 
-        with open(file_path, "wb") as file:
-            received_date = 0
-            while received_date < file_size:
-                data = client_socket.recv(1024)
-                if b"<END>" in data:
-                    data = data.replace(b"<END>", b"")
+            received_size = 0
+            with open(file_path, "wb") as file:
+                while received_size < file_size:
+                    data = client_socket.recv(1024)
+                    if b"<END>" in data:
+                        data = data.replace(b"<END>", b"")
+                        file.write(data)
+                        break
                     file.write(data)
-                    break
-                file.write(data)
-                received_date += len(data)
+                    received_size += len(data)
                 
-        print(f"[FILE RECEIVED] {file_name} from {addr}")
+            print(f"[FILE RECEIVED] {file_name} from {addr}")
+        except Exception as e:
+            print(f"Error receiving file: {e}")
+            break
 
 def handle_client(client_socket, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
