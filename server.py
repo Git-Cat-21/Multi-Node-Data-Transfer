@@ -2,6 +2,16 @@ import socket
 import threading
 import os
 import struct
+import signal
+import sys
+
+def signal_handler(sig, frame):
+    print("\n[SERVER SHUTDOWN] Signal received, closing server socket...")
+    server_socket.close()
+    sys.exit(0)
+
+# Attach the signal handler to SIGINT
+signal.signal(signal.SIGINT, signal_handler)
 
 def recv_file(client_socket, user_dir):
     try:

@@ -1,6 +1,8 @@
 import socket
 import os
 import struct
+import signal
+import sys
 
 def upload_file(client_socket):
     count = 0
@@ -32,8 +34,17 @@ def upload_file(client_socket):
         except Exception as e:
             print(f"Error sending file: {e}")
             break
+    
+def signal_handler(sig, frame):
+    print("\n[CLIENT SHUTDOWN] Signal received, closing client socket...")
+    client_socket.close()
+    sys.exit(0)
+
+# Attach the signal handler to SIGINT
+signal.signal(signal.SIGINT, signal_handler)
 
 def main():
+    global client_socket
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect(('127.0.0.1', 8888))
 
