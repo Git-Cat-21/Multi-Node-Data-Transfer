@@ -67,6 +67,8 @@ def handle_client(client_socket, addr):
                 print("Login failed.")
         else:
             print("Invalid handshake from client.")
+    except Exception as e:
+        print(f"Error handling client {addr}: {e}")
     finally:
         client_socket.close()
         print(f"[DISCONNECTED] {addr} disconnected.")
@@ -79,7 +81,7 @@ def start_server():
 
     while True:
         client_socket, addr = server_socket.accept()
-        client_thread = threading.Thread(target=handle_client, args=(client_socket, addr))
+        client_thread = threading.Thread(target=handle_client, args=(client_socket, addr), daemon=True)
         client_thread.start()
         print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
 

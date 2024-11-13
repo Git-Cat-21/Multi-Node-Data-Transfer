@@ -34,10 +34,10 @@ def upload_file(client_socket):
             break
 
 def main():
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect(('127.0.0.1', 8888))
-
     try:
+        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        client_socket.connect(('127.0.0.1', 8888))
+
         # Initial handshake
         client_socket.send("HELLO".encode('utf-8'))
         response = client_socket.recv(1024).decode('utf-8')
@@ -70,6 +70,8 @@ def main():
                 print("Login failed: Password does not match.")
         else:
             print("Handshake failed.")
+    except Exception as e:
+        print(f"Connection error: {e}")
     finally:
         client_socket.close()
 
