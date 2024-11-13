@@ -1,42 +1,12 @@
 import socket
 import threading
 import os
-import struct
-
-def recv_file(client_socket, user_dir):
-    try:
-        while True:
-            name_len_data = client_socket.recv(4)
-            if not name_len_data:
-                break
-            name_len = struct.unpack("I", name_len_data)[0]
-
-            file_name = client_socket.recv(name_len).decode()
-            file_path = os.path.join(user_dir, file_name)
-
-            file_size_data = client_socket.recv(8)
-            file_size = struct.unpack("Q", file_size_data)[0]
-            received_size = 0
-
-            with open(file_path, "wb") as file:
-                while received_size < file_size:
-                    data = client_socket.recv(1024)
-                    if b"<END>" in data:
-                        data = data.replace(b"<END>", b"")
-                        file.write(data)
-                        break
-                    file.write(data)
-                    received_size += len(data)
-
-            print(f"[FILE RECEIVED] {file_name}")
-    except Exception as e:
-        print(f"Error receiving file: {e}")
+from file_upload import recv_file
 
 def handle_client(client_socket, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
 
     try:
-        # Initial handshake
         message = client_socket.recv(1024).decode('utf-8')
         if message == "HELLO":
             client_socket.send("ACK".encode('utf-8'))
@@ -58,7 +28,7 @@ def handle_client(client_socket, addr):
                     if choice == '1':
                         print("Receiving file upload request.")
                         recv_file(client_socket, user_dir)
-                    elif choice == '6':
+                    elif choice == '2':
                         print("Client disconnected.")
                         break
                     else:
@@ -67,8 +37,6 @@ def handle_client(client_socket, addr):
                 print("Login failed.")
         else:
             print("Invalid handshake from client.")
-    except Exception as e:
-        print(f"Error handling client {addr}: {e}")
     finally:
         client_socket.close()
         print(f"[DISCONNECTED] {addr} disconnected.")

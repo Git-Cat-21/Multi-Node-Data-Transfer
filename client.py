@@ -1,44 +1,12 @@
 import socket
-import os
 import struct
-
-def upload_file(client_socket):
-    count = 0
-    while True:
-        file_name = input("Enter the file location (or type 'exit' to quit): ")
-        if file_name.lower() == 'exit':
-            print("Exiting the file upload.")
-            break
-        if not os.path.isfile(file_name):
-            print("File does not exist. Please try again.")
-            continue
-
-        count += 1
-        file_size = os.path.getsize(file_name)
-        file_ext = input("Enter the extension of the file (e.g., .txt): ")
-        recv_file_name = f"received_file{count}{file_ext}"
-
-        try:
-            client_socket.send(struct.pack("I", len(recv_file_name)))
-            client_socket.send(recv_file_name.encode())
-            client_socket.send(struct.pack("Q", file_size))
-
-            with open(file_name, "rb") as file:
-                while (data := file.read(1024)):
-                    client_socket.send(data)
-
-            client_socket.send(b"<END>")
-            print(f"{file_name} has been sent successfully.")
-        except Exception as e:
-            print(f"Error sending file: {e}")
-            break
+from file_upload import upload_file
 
 def main():
-    try:
-        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        client_socket.connect(('127.0.0.1', 8888))
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect(('127.0.0.1', 8888))
 
-        # Initial handshake
+    try:
         client_socket.send("HELLO".encode('utf-8'))
         response = client_socket.recv(1024).decode('utf-8')
         if response == "ACK":
@@ -54,14 +22,20 @@ def main():
                 print("Login successful.")
                 client_socket.send("Password Match".encode("utf-8"))
 
+                count = 0
                 while True:
-                    print("1.Upload\t2.Download\t3.View\t4.Delete\t5.List\t6.Exit : ")
+                    print("1.Upload\t2.Exit")
                     choice = input("Enter your choice: ")
                     client_socket.send(choice.encode('utf-8'))
 
                     if choice == '1':
-                        upload_file(client_socket)
-                    elif choice == '6':
+                        file_name = input("Enter the file location (or type 'exit' to quit): ")
+                        if file_name.lower() == 'exit':
+                            print("Exiting the file upload.")
+                            break
+                        count += 1
+                        upload_file(client_socket, file_name, count)
+                    elif choice == '2':
                         print("Exiting the client.")
                         break
                     else:
@@ -70,8 +44,6 @@ def main():
                 print("Login failed: Password does not match.")
         else:
             print("Handshake failed.")
-    except Exception as e:
-        print(f"Connection error: {e}")
     finally:
         client_socket.close()
 
