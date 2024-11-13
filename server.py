@@ -2,16 +2,6 @@ import socket
 import threading
 import os
 import struct
-import signal
-import sys
-
-def signal_handler(sig, frame):
-    print("\n[SERVER SHUTDOWN] Signal received, closing server socket...")
-    server_socket.close()
-    sys.exit(0)
-
-# Attach the signal handler to SIGINT
-signal.signal(signal.SIGINT, signal_handler)
 
 def recv_file(client_socket, user_dir):
     try:
@@ -46,53 +36,42 @@ def handle_client(client_socket, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
 
     try:
-        while True:
-            # Initial handshake
-            message = client_socket.recv(1024).decode('utf-8')
-            if message == "HELLO":
-                client_socket.send("ACK".encode('utf-8'))
-                userid = client_socket.recv(1024).decode('utf-8')
+        # Initial handshake
+        message = client_socket.recv(1024).decode('utf-8')
+        if message == "HELLO":
+            client_socket.send("ACK".encode('utf-8'))
+            userid = client_socket.recv(1024).decode('utf-8')
 
-                with open("id_passwd.txt", "r") as file:
-                    credentials = dict(line.strip().split(":") for line in file)
-                correct_pwd = credentials.get(userid, "")
+            with open("id_passwd.txt", "r") as file:
+                credentials = dict(line.strip().split(":") for line in file)
+            correct_pwd = credentials.get(userid, "")
 
-                client_socket.send(f"Password:{correct_pwd}".encode('utf-8'))
-                response = client_socket.recv(1024).decode('utf-8')
+            client_socket.send(f"Password:{correct_pwd}".encode('utf-8'))
+            response = client_socket.recv(1024).decode('utf-8')
 
-                if response == "Password Match":
-                    user_dir = os.path.join("server_storage", userid)
-                    os.makedirs(user_dir, exist_ok=True)
+            if response == "Password Match":
+                user_dir = os.path.join("server_storage", userid)
+                os.makedirs(user_dir, exist_ok=True)
 
-                    while True:
-                        try:
-                            # Receive choice from client, which resets session timeout on client-side
-                            choice = client_socket.recv(1024).decode('utf-8')
-                            if choice == '1':
-                                print("Receiving file upload request.")
-                                recv_file(client_socket, user_dir)
-                            elif choice == '6':
-                                print("Client disconnected voluntarily.")
-                                break
-                            else:
-                                print(f"Unhandled choice: {choice}")
-                        except socket.error:
-                            print("[SESSION EXPIRED] Client session timed out.")
-                            break  # Break to re-initiate login if client reconnects
-                else:
-                    print("Login failed.")
-                    break  # End session if login fails
+                while True:
+                    choice = client_socket.recv(1024).decode('utf-8')
+                    if choice == '1':
+                        print("Receiving file upload request.")
+                        recv_file(client_socket, user_dir)
+                    elif choice == '6':
+                        print("Client disconnected.")
+                        break
+                    else:
+                        print(f"Unhandled choice: {choice}")
             else:
-                print("Invalid handshake from client.")
-                break  # End session if invalid handshake
-    except socket.error as e:
-        print(f"[ERROR] Connection error with {addr}: {e}")
+                print("Login failed.")
+        else:
+            print("Invalid handshake from client.")
     finally:
         client_socket.close()
         print(f"[DISCONNECTED] {addr} disconnected.")
 
 def start_server():
-    global server_socket
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(('localhost', 8888))
     server_socket.listen()
