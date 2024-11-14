@@ -7,6 +7,12 @@ def main():
     client_socket.connect(('127.0.0.1', 8888))
 
     try:
+        initial_message = client_socket.recv(1024).decode('utf-8')
+        if initial_message == "Please wait, the server is busy.":
+            print("Server is busy. Please wait...")
+            initial_message = client_socket.recv(1024).decode('utf-8')  
+        print(initial_message)  
+
         client_socket.send("HELLO".encode('utf-8'))
         response = client_socket.recv(1024).decode('utf-8')
         
@@ -35,8 +41,8 @@ def main():
                             if file_name.lower() == 'exit':
                                 print("Canceled the upload.")
                                 break  
-                            count+=1
-                            upload_file(client_socket, file_name,count)
+                            count += 1
+                            upload_file(client_socket, file_name, count)
                         elif choice == '2':
                             file_name = input("Enter the file name to download (with full path): ")
                             download_dir = input("Enter the directory to save the file: ")

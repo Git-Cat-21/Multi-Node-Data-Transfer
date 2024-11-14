@@ -1,10 +1,19 @@
 import socket
-import threading
 import os
+from concurrent.futures import ThreadPoolExecutor
 from file_upload import recv_file
 from file_download import send_file
+from threading import Semaphore
+
+MAX_CONCURRENT_CLIENTS = 2
+semaphore = Semaphore(MAX_CONCURRENT_CLIENTS)
 
 def handle_client(client_socket, addr):
+    if not semaphore.acquire(blocking=False):
+        client_socket.send("Please wait, the server is busy.".encode('utf-8'))
+        semaphore.acquire()  
+
+    client_socket.send("You are now connected to the server.".encode('utf-8'))
     print(f"[NEW CONNECTION] {addr} connected.")
 
     try:
@@ -47,6 +56,7 @@ def handle_client(client_socket, addr):
     finally:
         client_socket.close()
         print(f"[DISCONNECTED] {addr} disconnected.")
+        semaphore.release()  
 
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -54,11 +64,11 @@ def start_server():
     server_socket.listen()
     print("[SERVER STARTED] Listening on port 8888.")
 
-    while True:
-        client_socket, addr = server_socket.accept()
-        client_thread = threading.Thread(target=handle_client, args=(client_socket, addr), daemon=True)
-        client_thread.start()
-        print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
+    with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_CLIENTS) as executor:
+        while True:
+            client_socket, addr = server_socket.accept()
+            print(f"[CONNECTION ACCEPTED] Connection from {addr}")
+            executor.submit(handle_client, client_socket, addr)
 
 if __name__ == "__main__":
     start_server()
