@@ -2,6 +2,7 @@ import socket
 import threading
 import os
 from file_upload import recv_file
+from file_download import send_file
 
 def handle_client(client_socket, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
@@ -11,9 +12,11 @@ def handle_client(client_socket, addr):
         if message == "HELLO":
             client_socket.send("ACK".encode('utf-8'))
             userid = client_socket.recv(1024).decode('utf-8')
-
-            with open("id_passwd.txt", "r") as file:
-                credentials = dict(line.strip().split(":") for line in file)
+            credentials = {}
+            if os.path.exists("id_passwd.txt"):
+                with open("id_passwd.txt", "r") as file:
+                    credentials = dict(line.strip().split(":") for line in file)
+                    
             correct_pwd = credentials.get(userid, "")
 
             client_socket.send(f"Password:{correct_pwd}".encode('utf-8'))
@@ -26,24 +29,28 @@ def handle_client(client_socket, addr):
                 while True:
                     choice = client_socket.recv(1024).decode('utf-8')
                     if choice == '1':
-                        print("Receiving file upload request.")
+                        print(f"[UPLOAD REQUEST] Receiving file from {addr}")
                         recv_file(client_socket, user_dir)
                     elif choice == '2':
-                        print("Client disconnected.")
+                        file_name = client_socket.recv(1024).decode('utf-8')
+                        print(f"[DOWNLOAD REQUEST] Sending file {file_name} to {addr}")
+                        send_file(client_socket, file_name)
+                    elif choice == '3':
+                        print(f"[CLIENT EXIT] {addr} requested to exit.")
                         break
                     else:
-                        print(f"Unhandled choice: {choice}")
+                        print(f"[ERROR] Unhandled choice: {choice}")
             else:
-                print("Login failed.")
+                print(f"[LOGIN FAILED] Incorrect password for {userid}")
         else:
-            print("Invalid handshake from client.")
+            print(f"[ERROR] Invalid handshake from client {addr}")
     finally:
         client_socket.close()
         print(f"[DISCONNECTED] {addr} disconnected.")
 
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('localhost', 8888))
+    server_socket.bind(('127.0.0.1', 8888))
     server_socket.listen()
     print("[SERVER STARTED] Listening on port 8888.")
 
