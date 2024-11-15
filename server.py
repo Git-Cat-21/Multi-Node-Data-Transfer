@@ -3,6 +3,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 from file_upload import recv_file
 from file_download import send_file
+from file_preview import read_file
 from threading import Semaphore
 
 MAX_CONCURRENT_CLIENTS = 2
@@ -45,6 +46,10 @@ def handle_client(client_socket, addr):
                         print(f"[DOWNLOAD REQUEST] Sending file {file_name} to {addr}")
                         send_file(client_socket, file_name)
                     elif choice == '3':
+                        file_path = client_socket.recv(1024).decode('utf-8')
+                        print(f"[PREVIEW REQUEST] Sending file {file_path} to {addr}")
+                        read_file(client_socket, file_path)
+                    elif choice == '4':
                         print(f"[CLIENT EXIT] {addr} requested to exit.")
                         break
                     else:

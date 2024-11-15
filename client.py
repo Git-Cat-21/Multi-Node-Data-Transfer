@@ -1,7 +1,8 @@
 import socket
 from file_upload import upload_file
 from file_download import download_file
-
+from file_preview import preview_file
+       
 def main():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect(('127.0.0.1', 8888))
@@ -32,7 +33,7 @@ def main():
                     client_socket.send("Password Match".encode("utf-8"))
                     count = 0
                     while True:
-                        print("1.Upload\t2.Download\t3.Exit")
+                        print("1.Upload\t2.Download\t3.Preview(First 1024 bytes only)\t4.Exit")
                         choice = input("Enter your choice: ")
                         client_socket.send(choice.encode('utf-8'))
 
@@ -48,6 +49,9 @@ def main():
                             download_dir = input("Enter the directory to save the file: ")
                             download_file(client_socket, file_name, download_dir)
                         elif choice == '3':
+                            file_path = input("Enter the path of the file to preview: ")
+                            preview_file(client_socket,file_path)
+                        elif choice == '4':
                             print("Exiting the client.")
                             break
                         else:
