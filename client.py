@@ -126,7 +126,7 @@ def main():
                         client_socket.send("Password Match".encode("utf-8"))
                         count = 0
                         while True:
-                            print("1.Upload\t2.Download\t3.Preview(First 1024 bytes only)\t4.Exit")
+                            print("1.Upload\t2.Download\t3.Preview(First 1024 bytes only)\t4.Delete File\t5. List Directory\t6.Exit")
                             choice = input("Enter your choice: ")
                             client_socket.send(choice.encode('utf-8'))
 
@@ -155,6 +155,15 @@ def main():
                                     file_path = input("Enter the path of the file to preview: ")
                                     preview_file(client_socket, file_path)
                                 elif choice == '4':
+                                    file_name = input("Enter the name of the file to delete: ")
+                                    client_socket.send(file_name.encode('utf-8'))
+                                    response = client_socket.recv(1024).decode('utf-8')
+                                    print(response)
+                                elif choice == '5':
+                                    print("Directory listing:")
+                                    response = client_socket.recv(4096).decode('utf-8')
+                                    print(response)
+                                elif choice == '6':
                                     print("Exiting the client.")
                                     break
                                 else:

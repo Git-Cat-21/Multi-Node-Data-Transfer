@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 from file_upload import recv_file
 from file_download import send_file
 from file_preview import read_file
+from file_delete import delete_file
 from threading import Semaphore
 import threading
 import struct
@@ -37,6 +38,8 @@ def handle_client(client_socket, addr):
         if message == "HELLO":
             client_socket.send("ACK".encode('utf-8'))
             userid = client_socket.recv(1024).decode('utf-8')
+            user_dir = os.path.join("server_storage", userid)
+            os.makedirs(user_dir, exist_ok=True)
             last_active_time = time.time()
 
             credentials = {}
@@ -79,7 +82,18 @@ def handle_client(client_socket, addr):
                             file_path = client_socket.recv(1024).decode('utf-8')
                             print(f"[PREVIEW REQUEST] Sending file {file_path} to {addr}")
                             read_file(client_socket, file_path)
-                        elif choice == '4':
+                        elif choice =='4':
+                            file_name = client_socket.recv(1024).decode('utf-8')
+                            response = delete_file(user_dir, file_name)  # Call the delete function
+                            client_socket.send(response.encode('utf-8'))
+                            print(f"[DELETE] {response} by {addr}")
+                        elif choice =='5':
+                                    # Handle directory listing (can be modularized similarly)
+                            files = os.listdir(user_dir)
+                            files_list = "\n".join(files) if files else "No files available."
+                            client_socket.send(files_list.encode('utf-8'))
+                            print(f"[LIST] Directory listing sent to {addr}")
+                        elif choice == '6':
                             print(f"[CLIENT EXIT] {addr} requested to exit.")
                             break
                         else:
