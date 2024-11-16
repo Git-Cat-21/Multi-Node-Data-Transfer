@@ -129,3 +129,255 @@
 2024-11-16 17:49:30,745 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 58603) connected.
 2024-11-16 17:49:30,745 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 58603).
 2024-11-16 17:49:30,745 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 58603).
+2024-11-16 20:04:19,797 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:04:27,482 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 50970).
+2024-11-16 20:04:27,484 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 50970) connected.
+2024-11-16 20:04:27,484 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 50970).
+2024-11-16 20:04:27,485 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 50970).
+2024-11-16 20:04:31,839 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:04:31,864 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:04:33,250 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 50970).
+2024-11-16 20:04:33,264 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 50970) disconnected.
+2024-11-16 20:04:39,836 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 50972).
+2024-11-16 20:04:39,837 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 50972) connected.
+2024-11-16 20:04:39,837 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 50972).
+2024-11-16 20:04:39,837 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 50972).
+2024-11-16 20:04:43,853 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:04:43,854 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:04:45,124 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 50972).
+2024-11-16 20:04:45,124 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 50972) disconnected.
+2024-11-16 20:05:04,885 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 50974).
+2024-11-16 20:05:04,885 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 50974) connected.
+2024-11-16 20:05:04,885 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 50974).
+2024-11-16 20:05:04,886 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 50974).
+2024-11-16 20:05:08,155 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:05:08,156 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:05:09,074 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 50974).
+2024-11-16 20:05:09,075 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 50974) disconnected.
+2024-11-16 20:06:02,164 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:06:10,157 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 50997).
+2024-11-16 20:06:10,158 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 50997) connected.
+2024-11-16 20:06:10,158 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 50997).
+2024-11-16 20:06:10,158 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 50997).
+2024-11-16 20:06:13,903 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:06:13,905 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:06:15,219 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 50997).
+2024-11-16 20:06:17,697 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of sample.txt to ('127.0.0.1', 50997).
+2024-11-16 20:06:25,200 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 6 from ('127.0.0.1', 50997).
+2024-11-16 20:06:25,200 - ServerLogger - INFO - [CLIENT EXIT] ('127.0.0.1', 50997) requested to exit.
+2024-11-16 20:06:25,202 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 50997) disconnected.
+2024-11-16 20:07:22,324 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:07:28,343 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51018).
+2024-11-16 20:07:28,344 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51018) connected.
+2024-11-16 20:07:28,344 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51018).
+2024-11-16 20:07:28,344 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51018).
+2024-11-16 20:07:31,729 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:07:31,731 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:07:32,875 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51018).
+2024-11-16 20:07:32,875 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51018) disconnected.
+2024-11-16 20:07:38,842 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51028).
+2024-11-16 20:07:38,842 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51028) connected.
+2024-11-16 20:07:38,842 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51028).
+2024-11-16 20:07:38,842 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51028).
+2024-11-16 20:07:42,359 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:07:42,360 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:07:43,562 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 1 from ('127.0.0.1', 51028).
+2024-11-16 20:07:43,562 - ServerLogger - INFO - [UPLOAD REQUEST] Receiving file from ('127.0.0.1', 51028).
+2024-11-16 20:07:50,975 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 5 from ('127.0.0.1', 51028).
+2024-11-16 20:07:50,975 - ServerLogger - INFO - [LIST REQUEST] Sent directory listing to ('127.0.0.1', 51028).
+2024-11-16 20:07:54,693 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51028).
+2024-11-16 20:07:54,694 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51028) disconnected.
+2024-11-16 20:22:55,017 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:23:01,599 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51444).
+2024-11-16 20:23:01,602 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51444) connected.
+2024-11-16 20:23:01,602 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51444).
+2024-11-16 20:23:01,602 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51444).
+2024-11-16 20:23:04,501 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:23:04,503 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:23:05,758 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51444).
+2024-11-16 20:23:08,531 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51444) disconnected.
+2024-11-16 20:23:20,129 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51456).
+2024-11-16 20:23:20,130 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51456) connected.
+2024-11-16 20:23:20,130 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51456).
+2024-11-16 20:23:20,130 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51456).
+2024-11-16 20:23:22,973 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:23:22,975 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:23:23,908 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51456).
+2024-11-16 20:23:25,029 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51456) disconnected.
+2024-11-16 20:24:28,527 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:24:35,041 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51469).
+2024-11-16 20:24:35,043 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51469) connected.
+2024-11-16 20:24:35,043 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51469).
+2024-11-16 20:24:35,043 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51469).
+2024-11-16 20:24:38,255 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:24:38,256 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:24:39,432 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51469).
+2024-11-16 20:24:46,065 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory.
+2024-11-16 20:24:56,876 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51469).
+2024-11-16 20:25:20,421 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory.
+2024-11-16 20:25:26,529 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51469).
+2024-11-16 20:25:37,243 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory.
+2024-11-16 20:25:52,248 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51469) inactive for 15 seconds.
+2024-11-16 20:25:52,248 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51469) disconnected.
+2024-11-16 20:26:11,546 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:26:19,110 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51492).
+2024-11-16 20:26:19,112 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51492) connected.
+2024-11-16 20:26:19,112 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51492).
+2024-11-16 20:26:19,112 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51492).
+2024-11-16 20:26:21,754 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:26:21,756 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:26:22,940 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51492).
+2024-11-16 20:26:36,671 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory.
+2024-11-16 20:26:51,682 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51492) inactive for 15 seconds.
+2024-11-16 20:26:51,682 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51492) disconnected.
+2024-11-16 20:27:03,067 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51493).
+2024-11-16 20:27:03,068 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51493) connected.
+2024-11-16 20:27:03,068 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51493).
+2024-11-16 20:27:03,068 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51493).
+2024-11-16 20:27:07,076 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:27:07,078 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:27:08,242 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51493).
+2024-11-16 20:27:13,349 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory.
+2024-11-16 20:27:28,363 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51493) inactive for 15 seconds.
+2024-11-16 20:27:28,363 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51493) disconnected.
+2024-11-16 20:30:00,311 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:30:06,278 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51561).
+2024-11-16 20:30:06,279 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51561) connected.
+2024-11-16 20:30:06,279 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51561).
+2024-11-16 20:30:06,279 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51561).
+2024-11-16 20:30:09,170 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:30:09,171 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:30:10,183 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51561).
+2024-11-16 20:30:17,837 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. received_file1.txt is not allowed.
+2024-11-16 20:30:32,838 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51561) inactive for 15 seconds.
+2024-11-16 20:30:32,839 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51561) disconnected.
+2024-11-16 20:31:37,704 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:31:44,381 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51590).
+2024-11-16 20:31:44,382 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51590) connected.
+2024-11-16 20:31:44,382 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51590).
+2024-11-16 20:31:44,382 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51590).
+2024-11-16 20:31:47,382 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:31:47,383 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:31:50,423 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51590).
+2024-11-16 20:31:56,597 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. received_file1.txt is not allowed.
+2024-11-16 20:32:11,599 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51590) inactive for 15 seconds.
+2024-11-16 20:32:11,599 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51590) disconnected.
+2024-11-16 20:33:04,529 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:33:10,984 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51610).
+2024-11-16 20:33:10,985 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51610) connected.
+2024-11-16 20:33:10,985 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51610).
+2024-11-16 20:33:10,985 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51610).
+2024-11-16 20:33:13,905 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:33:13,906 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:33:14,951 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51610).
+2024-11-16 20:33:22,129 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. received_file1.txt is not allowed.
+2024-11-16 20:33:37,142 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51610) inactive for 15 seconds.
+2024-11-16 20:33:37,143 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51610) disconnected.
+2024-11-16 20:34:06,026 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:34:15,604 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51632).
+2024-11-16 20:34:15,606 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51632) connected.
+2024-11-16 20:34:15,606 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51632).
+2024-11-16 20:34:15,606 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51632).
+2024-11-16 20:34:18,835 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:34:18,836 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:34:19,697 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51632).
+2024-11-16 20:34:20,750 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. received_file1.txt is not allowed.
+2024-11-16 20:34:35,761 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51632) inactive for 15 seconds.
+2024-11-16 20:34:35,761 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51632) disconnected.
+2024-11-16 20:34:43,963 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:34:50,655 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51635).
+2024-11-16 20:34:50,656 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51635) connected.
+2024-11-16 20:34:50,656 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51635).
+2024-11-16 20:34:50,657 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51635).
+2024-11-16 20:34:54,288 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:34:54,290 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:34:55,537 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51635).
+2024-11-16 20:34:57,016 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. received_file1.txt is not allowed.
+2024-11-16 20:35:12,026 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51635) inactive for 15 seconds.
+2024-11-16 20:35:12,027 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51635) disconnected.
+2024-11-16 20:36:02,893 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:36:09,193 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51661).
+2024-11-16 20:36:09,194 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51661) connected.
+2024-11-16 20:36:09,195 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51661).
+2024-11-16 20:36:09,195 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51661).
+2024-11-16 20:36:12,125 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:36:12,127 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:36:13,025 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51661).
+2024-11-16 20:36:14,287 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. received_file1.txt is not allowed.
+2024-11-16 20:36:29,292 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51661) inactive for 15 seconds.
+2024-11-16 20:36:29,293 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51661) disconnected.
+2024-11-16 20:37:04,113 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:37:10,670 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51680).
+2024-11-16 20:37:10,671 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51680) connected.
+2024-11-16 20:37:10,671 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51680).
+2024-11-16 20:37:10,671 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51680).
+2024-11-16 20:37:13,268 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:37:13,269 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:37:14,256 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51680).
+2024-11-16 20:37:15,400 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. received_file1.txt is not allowed.
+2024-11-16 20:37:50,482 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:37:56,885 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51689).
+2024-11-16 20:37:56,886 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51689) connected.
+2024-11-16 20:37:56,886 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51689).
+2024-11-16 20:37:56,886 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51689).
+2024-11-16 20:38:00,081 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:38:00,082 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:38:02,901 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51689).
+2024-11-16 20:38:03,822 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of received_file1.txt to ('127.0.0.1', 51689).
+2024-11-16 20:38:14,598 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51689).
+2024-11-16 20:38:18,772 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of id_passwd.txt to ('127.0.0.1', 51689).
+2024-11-16 20:41:01,830 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:41:08,223 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51733).
+2024-11-16 20:41:08,224 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51733) connected.
+2024-11-16 20:41:08,224 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51733).
+2024-11-16 20:41:08,225 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51733).
+2024-11-16 20:41:11,140 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:41:11,142 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:41:12,305 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 2 from ('127.0.0.1', 51733).
+2024-11-16 20:41:18,962 - ServerLogger - INFO - [DOWNLOAD REQUEST] Sending file sample.txt to ('127.0.0.1', 51733).
+2024-11-16 20:41:21,874 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 2 from ('127.0.0.1', 51733).
+2024-11-16 20:41:30,622 - ServerLogger - INFO - [DOWNLOAD REQUEST] Sending file id_passwd.txt to ('127.0.0.1', 51733).
+2024-11-16 20:41:42,156 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 4 from ('127.0.0.1', 51733).
+2024-11-16 20:41:50,221 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51733) disconnected.
+2024-11-16 20:42:06,462 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51750).
+2024-11-16 20:42:06,463 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51750) connected.
+2024-11-16 20:42:06,463 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51750).
+2024-11-16 20:42:06,463 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51750).
+2024-11-16 20:42:09,510 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:42:09,512 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:42:10,450 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 5 from ('127.0.0.1', 51750).
+2024-11-16 20:42:10,451 - ServerLogger - INFO - [LIST REQUEST] Sent directory listing to ('127.0.0.1', 51750).
+2024-11-16 20:42:12,826 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 4 from ('127.0.0.1', 51750).
+2024-11-16 20:42:16,597 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51750) disconnected.
+2024-11-16 20:44:22,062 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:44:29,123 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51847).
+2024-11-16 20:44:29,124 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51847) connected.
+2024-11-16 20:44:29,124 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51847).
+2024-11-16 20:44:29,124 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51847).
+2024-11-16 20:44:32,439 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:44:32,440 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:44:37,026 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 2 from ('127.0.0.1', 51847).
+2024-11-16 20:44:46,099 - ServerLogger - INFO - [DOWNLOAD REQUEST] Sending file id_passwd.txt to ('127.0.0.1', 51847).
+2024-11-16 20:46:26,105 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51847) inactive for 100 seconds.
+2024-11-16 20:46:26,105 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51847) disconnected.
+2024-11-16 20:46:41,871 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:46:49,388 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51877).
+2024-11-16 20:46:49,390 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51877) connected.
+2024-11-16 20:46:49,390 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51877).
+2024-11-16 20:46:49,390 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51877).
+2024-11-16 20:46:54,719 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:46:54,721 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:46:55,585 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 2 from ('127.0.0.1', 51877).
+2024-11-16 20:47:03,888 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. id_passwd.txt is not allowed.
+2024-11-16 20:47:14,779 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51877) disconnected.
+2024-11-16 20:47:22,979 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:47:31,017 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51883).
+2024-11-16 20:47:31,018 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51883) connected.
+2024-11-16 20:47:31,019 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51883).
+2024-11-16 20:47:31,019 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51883).
+2024-11-16 20:47:35,379 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:47:35,380 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:47:37,037 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 2 from ('127.0.0.1', 51883).
+2024-11-16 20:47:46,240 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. C:\PES University\5th Sem\BD\EC-Team-16-distributed-file-orchestration-and-synchronization\id_passwd.txt is not allowed.
+2024-11-16 20:49:26,253 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51883) inactive for 100 seconds.
+2024-11-16 20:49:26,254 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51883) disconnected.

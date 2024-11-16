@@ -14,7 +14,7 @@ from logger_util import setup_logger
 
 logger = setup_logger("ServerLogger", "logs/server.log")
 
-TIMEOUT_DURATION = 15 # Timeout in seconds
+TIMEOUT_DURATION = 100 
 
 MAX_CONCURRENT_CLIENTS = 2
 semaphore = Semaphore(MAX_CONCURRENT_CLIENTS)
@@ -25,6 +25,17 @@ def signal_handler(sig, frame):
     sys.exit(0)
 
 signal.signal(signal.SIGINT, signal_handler)
+
+def validate_file_path(user_dir, file_path):
+    abs_path = os.path.abspath(os.path.join(user_dir, file_path))
+    path = abs_path.strip().split("\\")
+    user = user_dir.strip().split("\\")
+    if user[1] not in path :
+        raise ValueError(f"Invalid file path, outside of user's directory. {file_path} is not allowed.")
+    
+    return abs_path
+
+
 
 def handle_client(client_socket, addr):
     logger.info(f"[NEW CONNECTION] {addr} connected.")
@@ -72,7 +83,6 @@ def handle_client(client_socket, addr):
                         last_active_time = time.time()
                         client_socket.settimeout(None)
 
-                        # Check if there was a timeout (inactivity)
                         if time.time() - last_active_time > TIMEOUT_DURATION:
                             print(f"[TIMEOUT] {addr} inactive for {TIMEOUT_DURATION} seconds. Disconnecting...")
                             logger.warning(f"[TIMEOUT] {addr} inactive for {TIMEOUT_DURATION} seconds.")
@@ -90,18 +100,22 @@ def handle_client(client_socket, addr):
                             logger.info(f"[DOWNLOAD REQUEST] Sending file {file_name} to {addr}.")
                             send_file(client_socket, file_name)
                         elif choice == '3':
-                            file_path = client_socket.recv(1024).decode('utf-8')
-                            logger.info(f"[PREVIEW REQUEST] Sending preview of {file_path} to {addr}.")
-                            print(f"[PREVIEW REQUEST] Sending file {file_path} to {addr}")
-                            read_file(client_socket, file_path)
+                            file_path = client_socket.recv(1024).decode('utf-8') 
+                            try:
+                                validated_path = validate_file_path(user_dir, file_path) 
+                                logger.info(f"[PREVIEW REQUEST] Sending preview of {file_path} to {addr}.")
+                                print(f"[PREVIEW REQUEST] Sending file {file_path} to {addr}")
+                                read_file(client_socket, validated_path)  
+                            except ValueError as e:
+                                client_socket.send(f"Error: {e}".encode('utf-8'))
+                                logger.error(f"[INVALID FILE PATH] {e}")
                         elif choice =='4':
                             file_name = client_socket.recv(1024).decode('utf-8')
-                            response = delete_file(user_dir, file_name)  # Call the delete function
+                            response = delete_file(user_dir, file_name)  
                             client_socket.send(response.encode('utf-8'))
                             logger.info(f"[DELETE REQUEST] {response} by {addr}.")
                             print(f"[DELETE] {response} by {addr}")
                         elif choice =='5':
-                                    # Handle directory listing (can be modularized similarly)
                             files = os.listdir(user_dir)
                             files_list = "\n".join(files) if files else "No files available."
                             client_socket.send(files_list.encode('utf-8'))
