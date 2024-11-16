@@ -37,3 +37,21 @@
 2024-11-16 17:24:26,256 - ClientLogger - INFO - Exiting the client.
 2024-11-16 17:24:26,257 - ClientLogger - INFO - Client socket closed.
 2024-11-16 17:24:33,198 - ClientLogger - INFO - Client socket closed.
+2024-11-16 17:43:17,015 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-16 17:43:17,016 - ClientLogger - INFO - Connected to the server.
+2024-11-16 17:43:17,018 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-16 17:43:17,018 - ClientLogger - INFO - Handshake successful.
+2024-11-16 17:43:21,838 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user4
+2024-11-16 17:43:26,521 - ClientLogger - INFO - File uploaded: sample.txt
+2024-11-16 17:43:42,780 - ClientLogger - INFO - Client socket closed.
+2024-11-16 17:43:44,338 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-16 17:43:44,340 - ClientLogger - INFO - Connected to the server.
+2024-11-16 17:43:44,341 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-16 17:43:44,341 - ClientLogger - INFO - Handshake successful.
+2024-11-16 17:43:48,385 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user4
+2024-11-16 17:43:55,909 - ClientLogger - INFO - File downloaded: C:\PES University\5th Sem\BD\EC-Team-16-distributed-file-orchestration-and-synchronization\server_storage\user4\received_file1.txt
+2024-11-16 17:44:06,558 - ClientLogger - INFO - File previewed: logger_util.py
+2024-11-16 17:44:21,408 - ClientLogger - INFO - File deleted: received_file1.txt
+2024-11-16 17:44:24,852 - ClientLogger - INFO - directory listed
+2024-11-16 17:44:29,140 - ClientLogger - INFO - Exiting the client.
+2024-11-16 17:44:29,140 - ClientLogger - INFO - Client socket closed.
