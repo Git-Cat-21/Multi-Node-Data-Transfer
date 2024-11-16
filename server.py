@@ -6,11 +6,13 @@ from file_download import send_file
 from file_preview import read_file
 from file_delete import delete_file
 from threading import Semaphore
-import threading
-import struct
 import signal
 import sys
 import time
+import logging
+from logger_util import setup_logger
+
+logger = setup_logger("ServerLogger", "logs/server.log")
 
 TIMEOUT_DURATION = 15 # Timeout in seconds
 
@@ -25,19 +27,23 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 def handle_client(client_socket, addr):
+    logger.info(f"[NEW CONNECTION] {addr} connected.")
     if not semaphore.acquire(blocking=False):
+        logger.warning(f"[SERVER BUSY] Too many connections. Rejected {addr}.")
         client_socket.send("Please wait, the server is busy.".encode('utf-8'))
         semaphore.acquire()  
 
     client_socket.send("You are now connected to the server.".encode('utf-8'))
     print(f"[NEW CONNECTION] {addr} connected.")
+    logger.debug(f"[WELCOME MESSAGE SENT] To {addr}.")
     last_active_time = time.time()
-
     try:
         message = client_socket.recv(1024).decode('utf-8')
         if message == "HELLO":
+            logger.debug(f"Received handshake from {addr}.")
             client_socket.send("ACK".encode('utf-8'))
             userid = client_socket.recv(1024).decode('utf-8')
+            logger.info(f"[USER LOGIN ATTEMPT] UserID: {userid}")
             user_dir = os.path.join("server_storage", userid)
             os.makedirs(user_dir, exist_ok=True)
             last_active_time = time.time()
@@ -54,6 +60,7 @@ def handle_client(client_socket, addr):
             last_active_time = time.time()
 
             if response == "Password Match":
+                logger.info(f"[LOGIN SUCCESS] User {userid} logged in.")
                 user_dir = os.path.join("server_storage", userid)
                 os.makedirs(user_dir, exist_ok=True)
 
@@ -61,31 +68,37 @@ def handle_client(client_socket, addr):
                     client_socket.settimeout(TIMEOUT_DURATION)
                     try:
                         choice = client_socket.recv(1024).decode('utf-8')
+                        logger.debug(f"[REQUEST RECEIVED] Choice: {choice} from {addr}.")
                         last_active_time = time.time()
                         client_socket.settimeout(None)
 
                         # Check if there was a timeout (inactivity)
                         if time.time() - last_active_time > TIMEOUT_DURATION:
                             print(f"[TIMEOUT] {addr} inactive for {TIMEOUT_DURATION} seconds. Disconnecting...")
+                            logger.warning(f"[TIMEOUT] {addr} inactive for {TIMEOUT_DURATION} seconds.")
                             client_socket.send("TIMEOUT".encode('utf-8'))
                             break
                         else:
                             client_socket.send("PROCEED".encode('utf-8'))
                         if choice == '1':
                             print(f"[UPLOAD REQUEST] Receiving file from {addr}")
+                            logger.info(f"[UPLOAD REQUEST] Receiving file from {addr}.")
                             recv_file(client_socket, user_dir)
                         elif choice == '2':
                             file_name = client_socket.recv(1024).decode('utf-8')
                             print(f"[DOWNLOAD REQUEST] Sending file {file_name} to {addr}")
+                            logger.info(f"[DOWNLOAD REQUEST] Sending file {file_name} to {addr}.")
                             send_file(client_socket, file_name)
                         elif choice == '3':
                             file_path = client_socket.recv(1024).decode('utf-8')
+                            logger.info(f"[PREVIEW REQUEST] Sending preview of {file_path} to {addr}.")
                             print(f"[PREVIEW REQUEST] Sending file {file_path} to {addr}")
                             read_file(client_socket, file_path)
                         elif choice =='4':
                             file_name = client_socket.recv(1024).decode('utf-8')
                             response = delete_file(user_dir, file_name)  # Call the delete function
                             client_socket.send(response.encode('utf-8'))
+                            logger.info(f"[DELETE REQUEST] {response} by {addr}.")
                             print(f"[DELETE] {response} by {addr}")
                         elif choice =='5':
                                     # Handle directory listing (can be modularized similarly)
@@ -93,22 +106,29 @@ def handle_client(client_socket, addr):
                             files_list = "\n".join(files) if files else "No files available."
                             client_socket.send(files_list.encode('utf-8'))
                             print(f"[LIST] Directory listing sent to {addr}")
+                            logger.info(f"[LIST REQUEST] Sent directory listing to {addr}.")
                         elif choice == '6':
                             print(f"[CLIENT EXIT] {addr} requested to exit.")
+                            logger.info(f"[CLIENT EXIT] {addr} requested to exit.")
                             break
                         else:
                             print(f"[ERROR] Unhandled choice: {choice}")
+                            logger.warning(f"[INVALID REQUEST] {choice} from {addr}.")
                     except socket.timeout:
                         print(f"[TIMEOUT] {addr} inactive for {TIMEOUT_DURATION} seconds. Disconnecting...")
+                        logger.warning(f"[TIMEOUT] {addr} inactive for {TIMEOUT_DURATION} seconds.")
                         client_socket.send("TIMEOUT".encode('utf-8'))
                         break
             else:
                 print(f"[LOGIN FAILED] Incorrect password for {userid}")
+                logger.warning(f"[LOGIN FAILED] Incorrect password for UserID: {userid}.")
         else:
             print(f"[ERROR] Invalid handshake from client {addr}")
+            logger.error(f"[HANDSHAKE FAILED] Invalid message from {addr}.")
     finally:
         client_socket.close()
         print(f"[DISCONNECTED] {addr} disconnected.")
+        logger.info(f"[DISCONNECTED] {addr} disconnected.")
         semaphore.release()  
 
 def start_server():
@@ -117,11 +137,13 @@ def start_server():
     server_socket.bind(('127.0.0.1', 8888))
     server_socket.listen()
     print("[SERVER STARTED] Listening on port 8888.")
+    logger.info("[SERVER STARTED] Listening on port 8888.")
 
     with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_CLIENTS) as executor:
         while True:
             client_socket, addr = server_socket.accept()
             print(f"[CONNECTION ACCEPTED] Connection from {addr}")
+            logger.info(f"[CONNECTION ACCEPTED] Connection from {addr}.")
             executor.submit(handle_client, client_socket, addr)
 
 

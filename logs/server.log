@@ -1,0 +1,30 @@
+2024-11-16 12:06:02,158 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 12:06:17,726 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51528).
+2024-11-16 12:06:17,726 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51528) connected.
+2024-11-16 12:06:17,726 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51528).
+2024-11-16 12:06:17,726 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51528).
+2024-11-16 12:06:21,882 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 12:06:21,898 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 12:06:25,504 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 51528).
+2024-11-16 12:06:29,680 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of sample.txt to ('127.0.0.1', 51528).
+2024-11-16 12:06:35,074 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 5 from ('127.0.0.1', 51528).
+2024-11-16 12:06:35,074 - ServerLogger - INFO - [LIST REQUEST] Sent directory listing to ('127.0.0.1', 51528).
+2024-11-16 12:06:50,085 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51528) inactive for 15 seconds.
+2024-11-16 12:06:50,085 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51528) disconnected.
+2024-11-16 12:07:19,374 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 51531).
+2024-11-16 12:07:19,374 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 51531) connected.
+2024-11-16 12:07:19,374 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 51531).
+2024-11-16 12:07:19,374 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 51531).
+2024-11-16 12:07:22,752 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 12:07:22,752 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 12:07:24,577 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 2 from ('127.0.0.1', 51531).
+2024-11-16 12:07:31,159 - ServerLogger - INFO - [DOWNLOAD REQUEST] Sending file sample.txt to ('127.0.0.1', 51531).
+2024-11-16 12:07:36,008 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 4 from ('127.0.0.1', 51531).
+2024-11-16 12:07:51,190 - ServerLogger - INFO - [DELETE REQUEST] File not found. by ('127.0.0.1', 51531).
+2024-11-16 12:07:54,567 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 2 from ('127.0.0.1', 51531).
+2024-11-16 12:08:03,011 - ServerLogger - INFO - [DOWNLOAD REQUEST] Sending file sample.txt to ('127.0.0.1', 51531).
+2024-11-16 12:08:17,915 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 4 from ('127.0.0.1', 51531).
+2024-11-16 12:08:26,821 - ServerLogger - INFO - [DELETE REQUEST] File 'received_file1.txt' deleted successfully. by ('127.0.0.1', 51531).
+2024-11-16 12:08:33,471 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 6 from ('127.0.0.1', 51531).
+2024-11-16 12:08:33,471 - ServerLogger - INFO - [CLIENT EXIT] ('127.0.0.1', 51531) requested to exit.
+2024-11-16 12:08:33,471 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51531) disconnected.
