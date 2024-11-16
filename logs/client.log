@@ -55,3 +55,42 @@
 2024-11-16 17:44:24,852 - ClientLogger - INFO - directory listed
 2024-11-16 17:44:29,140 - ClientLogger - INFO - Exiting the client.
 2024-11-16 17:44:29,140 - ClientLogger - INFO - Client socket closed.
+2024-11-16 17:47:11,685 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-16 17:47:11,687 - ClientLogger - INFO - Connected to the server.
+2024-11-16 17:47:11,689 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-16 17:47:11,689 - ClientLogger - INFO - Handshake successful.
+2024-11-16 17:47:15,160 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user2
+2024-11-16 17:47:22,539 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-16 17:47:22,540 - ClientLogger - INFO - Connected to the server.
+2024-11-16 17:47:22,542 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-16 17:47:22,542 - ClientLogger - INFO - Handshake successful.
+2024-11-16 17:47:26,664 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user3
+2024-11-16 17:47:34,975 - ClientLogger - INFO - Client socket closed.
+2024-11-16 17:47:36,766 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-16 17:47:36,766 - ClientLogger - INFO - Connected to the server.
+2024-11-16 17:47:36,767 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-16 17:47:36,767 - ClientLogger - INFO - Handshake successful.
+2024-11-16 17:47:41,818 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user2
+2024-11-16 17:48:02,287 - ClientLogger - INFO - File previewed: sample.txt
+2024-11-16 17:48:25,258 - ClientLogger - INFO - Client socket closed.
+2024-11-16 17:48:31,599 - ClientLogger - INFO - Client socket closed.
+2024-11-16 17:48:53,293 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-16 17:48:53,295 - ClientLogger - INFO - Connected to the server.
+2024-11-16 17:48:53,297 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-16 17:48:53,297 - ClientLogger - INFO - Handshake successful.
+2024-11-16 17:48:54,473 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-16 17:48:54,474 - ClientLogger - INFO - Client socket closed.
+2024-11-16 17:49:10,100 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-16 17:49:10,101 - ClientLogger - INFO - Connected to the server.
+2024-11-16 17:49:10,123 - ClientLogger - ERROR - [ERROR] [WinError 10054] An existing connection was forcibly closed by the remote host
+2024-11-16 17:49:10,123 - ClientLogger - INFO - Client socket closed.
+2024-11-16 17:49:25,047 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-16 17:49:25,048 - ClientLogger - INFO - Connected to the server.
+2024-11-16 17:49:25,050 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-16 17:49:25,051 - ClientLogger - INFO - Handshake successful.
+2024-11-16 17:49:26,574 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-16 17:49:26,575 - ClientLogger - INFO - Client socket closed.
+2024-11-16 17:49:30,742 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-16 17:49:30,744 - ClientLogger - INFO - Connected to the server.
+2024-11-16 17:49:30,745 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-16 17:49:30,746 - ClientLogger - INFO - Handshake successful.

@@ -84,3 +84,48 @@
 2024-11-16 17:44:29,139 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 6 from ('127.0.0.1', 58514).
 2024-11-16 17:44:29,140 - ServerLogger - INFO - [CLIENT EXIT] ('127.0.0.1', 58514) requested to exit.
 2024-11-16 17:44:29,140 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 58514) disconnected.
+2024-11-16 17:47:03,072 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 17:47:11,687 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 58584).
+2024-11-16 17:47:11,688 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 58584) connected.
+2024-11-16 17:47:11,689 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 58584).
+2024-11-16 17:47:11,689 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 58584).
+2024-11-16 17:47:15,159 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user2
+2024-11-16 17:47:15,160 - ServerLogger - INFO - [LOGIN SUCCESS] User user2 logged in.
+2024-11-16 17:47:22,541 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 58588).
+2024-11-16 17:47:22,542 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 58588) connected.
+2024-11-16 17:47:22,542 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 58588).
+2024-11-16 17:47:22,542 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 58588).
+2024-11-16 17:47:26,663 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user3
+2024-11-16 17:47:26,664 - ServerLogger - INFO - [LOGIN SUCCESS] User user3 logged in.
+2024-11-16 17:47:30,161 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 58584) inactive for 15 seconds.
+2024-11-16 17:47:30,162 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 58584) disconnected.
+2024-11-16 17:47:36,766 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 58589).
+2024-11-16 17:47:36,767 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 58589) connected.
+2024-11-16 17:47:36,767 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 58589).
+2024-11-16 17:47:36,767 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 58589).
+2024-11-16 17:47:41,667 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 58588) inactive for 15 seconds.
+2024-11-16 17:47:41,668 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 58588) disconnected.
+2024-11-16 17:47:41,816 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user2
+2024-11-16 17:47:41,818 - ServerLogger - INFO - [LOGIN SUCCESS] User user2 logged in.
+2024-11-16 17:47:53,909 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 58589).
+2024-11-16 17:48:02,286 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of sample.txt to ('127.0.0.1', 58589).
+2024-11-16 17:48:17,301 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 58589) inactive for 15 seconds.
+2024-11-16 17:48:17,303 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 58589) disconnected.
+2024-11-16 17:48:46,869 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 17:48:53,295 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 58594).
+2024-11-16 17:48:53,296 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 58594) connected.
+2024-11-16 17:48:53,297 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 58594).
+2024-11-16 17:48:53,297 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 58594).
+2024-11-16 17:48:54,474 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: 
+2024-11-16 17:48:54,475 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 58594) disconnected.
+2024-11-16 17:49:18,482 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 17:49:25,049 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 58602).
+2024-11-16 17:49:25,050 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 58602) connected.
+2024-11-16 17:49:25,050 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 58602).
+2024-11-16 17:49:25,050 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 58602).
+2024-11-16 17:49:26,575 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: 
+2024-11-16 17:49:26,577 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 58602) disconnected.
+2024-11-16 17:49:30,744 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 58603).
+2024-11-16 17:49:30,745 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 58603) connected.
+2024-11-16 17:49:30,745 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 58603).
+2024-11-16 17:49:30,745 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 58603).
