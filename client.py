@@ -80,9 +80,11 @@ def main():
                                     upload_file(client_socket, file_name, count)
                                     logger.info(f"File uploaded: {file_name}")
                                 elif choice == '2':
-                                    file_name = input("Enter the file name to download (with full path): ")
+                                    response = client_socket.recv(4096).decode('utf-8')
+                                    print(response)
+                                    file_name = input("Enter the file name to download: ")
                                     download_dir = input("Enter the directory to save the file: ")
-                                    download_file(client_socket, file_name, download_dir)
+                                    download_file(client_socket, file_name, download_dir, userid)
                                     logger.info(f"File downloaded: {file_name}")
                                 elif choice == '3':
                                     file_path = input("Enter the path of the file to preview: ")

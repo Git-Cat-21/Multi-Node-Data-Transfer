@@ -95,10 +95,30 @@ def handle_client(client_socket, addr):
                             logger.info(f"[UPLOAD REQUEST] Receiving file from {addr}.")
                             recv_file(client_socket, user_dir)
                         elif choice == '2':
-                            file_name = client_socket.recv(1024).decode('utf-8')
-                            print(f"[DOWNLOAD REQUEST] Sending file {file_name} to {addr}")
-                            logger.info(f"[DOWNLOAD REQUEST] Sending file {file_name} to {addr}.")
-                            send_file(client_socket, file_name)
+                            files = os.listdir(user_dir)
+                            files_list = "\n".join(files) if files else "No files available."
+                            client_socket.send(files_list.encode('utf-8'))
+                            print(f"[LIST] Directory listing sent to {addr}")
+
+                            file_path = client_socket.recv(1024).decode('utf-8')
+                            print(f"[DOWNLOAD REQUEST] Received file path: {file_path}")
+
+
+                            if not file_path.startswith(f"./server_storage/{userid}/"):
+                                client_socket.send(struct.pack("Q", 0)) 
+                                print(f"[ERROR] Unauthorized access attempt by {addr}.")
+                                logger.error(f"[ERROR] Unauthorized access attempt by {addr}.")
+                                return
+
+                            if os.path.isfile(file_path):
+                                send_file(client_socket, file_path)
+                                print(f"[DOWNLOAD REQUEST] Sent file '{file_path}' to {addr}")
+                                logger.info(f"[DOWNLOAD REQUEST] Sent file '{file_path}' to {addr}.")
+                            else:
+                                client_socket.send(struct.pack("Q", 0)) 
+                                print(f"[ERROR] File '{file_path}' not found.")
+                                logger.error(f"[ERROR] File '{file_path}' not found.")
+
                         elif choice == '3':
                             file_path = client_socket.recv(1024).decode('utf-8') 
                             try:
