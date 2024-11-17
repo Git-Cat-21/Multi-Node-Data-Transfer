@@ -19,7 +19,8 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 def main():
-    while True:
+    restart=True
+    while restart:
         logger.info("[CLIENT STARTED] Attempting to connect to the server.")
         global client_socket
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -50,11 +51,12 @@ def main():
                     correct_pwd = password_response.split(":")[1].strip()
 
                     if pwd == correct_pwd:
+                        
                         print("Login successful.")
                         logger.info(f"[LOGIN SUCCESS] UserID: {userid}")
                         client_socket.send("Password Match".encode("utf-8"))
                         count = 0
-                        while True:
+                        while restart:
                             print("1.Upload\t2.Download\t3.Preview(First 1024 bytes only)\t4.Delete File\t5. List Directory\t6.Exit")
                             choice = input("Enter your choice: ")
                             client_socket.send(choice.encode('utf-8'))
@@ -100,7 +102,8 @@ def main():
                                 elif choice == '6':
                                     print("Exiting the client.")
                                     logger.info("Exiting the client.")
-                                    break
+                                    restart=False
+                                    # break
                                 else:
                                     print("Invalid choice. Please select from 1 to 6.")
                                     logger.warning(f"Invalid choice: {choice}")
@@ -121,9 +124,9 @@ def main():
         finally:
             client_socket.close()
             logger.info("Client socket closed.")
-        retry = input("Do you want to try logging in again? (yes/no): ").strip().lower()
-        if retry != 'yes':
-            break
+        # retry = input("Do you want to try logging in again? (yes/no): ").strip().lower()
+        # if retry != 'yes':
+        #     break
 
 if __name__ == "__main__":
     main()
