@@ -6,6 +6,7 @@ import signal
 import os
 import struct
 import sys
+import maskpass 
 
 from logger_util import setup_logger
 logger = setup_logger("ClientLogger", "logs/client.log")
@@ -42,7 +43,12 @@ def main():
                 logger.info("Handshake successful.")
                 print("Handshake successful.")
                 userid = input("Username: ")
-                pwd = input("Password: ")
+                # pwd = input("Password: ")
+                 # to hide the password
+ 
+# masking the password
+                pwd = maskpass.askpass(mask="*")  
+                print(pwd)
 
                 client_socket.send(userid.encode('utf-8'))
                 password_response = client_socket.recv(1024).decode('utf-8')
