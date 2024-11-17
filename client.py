@@ -62,7 +62,7 @@ def main():
                         logger.info(f"[LOGIN SUCCESS] UserID: {userid}")
                         client_socket.send("Password Match".encode("utf-8"))
                         count = 0
-                        while True:
+                        while restart:
                             print("1.Upload\t2.Download\t3.Preview(First 1024 bytes only)\t4.Delete File\t5. List Directory\t6.Exit")
                             choice = input("Enter your choice: ")
                             client_socket.send(choice.encode('utf-8'))
