@@ -130,6 +130,12 @@ def handle_client(client_socket, addr):
                                 client_socket.send(f"Error: {e}".encode('utf-8'))
                                 logger.error(f"[INVALID FILE PATH] {e}")
                         elif choice =='4':
+                            files = os.listdir(user_dir)
+                            files_list = "\n".join(files) if files else "No files available."
+                            client_socket.send(files_list.encode('utf-8'))
+                            print(f"[LIST] Directory listing sent to {addr}")
+                            logger.info(f"[LIST REQUEST] Sent directory listing to {addr}.")
+
                             file_name = client_socket.recv(1024).decode('utf-8')
                             response = delete_file(user_dir, file_name)  
                             client_socket.send(response.encode('utf-8'))

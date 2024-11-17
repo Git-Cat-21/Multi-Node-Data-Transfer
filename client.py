@@ -56,7 +56,7 @@ def main():
                         logger.info(f"[LOGIN SUCCESS] UserID: {userid}")
                         client_socket.send("Password Match".encode("utf-8"))
                         count = 0
-                        while restart:
+                        while True:
                             print("1.Upload\t2.Download\t3.Preview(First 1024 bytes only)\t4.Delete File\t5. List Directory\t6.Exit")
                             choice = input("Enter your choice: ")
                             client_socket.send(choice.encode('utf-8'))
@@ -91,6 +91,14 @@ def main():
                                     preview_file(client_socket, file_path)
                                     logger.info(f"File previewed: {file_path}")
                                 elif choice == '4':
+                                    print("Directory listing:")
+                                    response = client_socket.recv(4096).decode('utf-8')
+                                    if response =="No files available.":
+                                        print(response)
+                                        continue
+                                    print(response)
+                                    logger.info(f"directory listed")
+
                                     file_name = input("Enter the name of the file to delete: ")
                                     client_socket.send(file_name.encode('utf-8'))
                                     response = client_socket.recv(1024).decode('utf-8')
