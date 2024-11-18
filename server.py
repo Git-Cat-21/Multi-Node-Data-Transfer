@@ -11,6 +11,7 @@ import sys
 import time
 import logging
 from logger_util import setup_logger
+import struct
 
 logger = setup_logger("ServerLogger", "logs/server.log")
 
