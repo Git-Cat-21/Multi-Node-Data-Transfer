@@ -6,6 +6,7 @@ import signal
 import os
 import struct
 import sys
+import maskpass 
 
 from logger_util import setup_logger
 logger = setup_logger("ClientLogger", "logs/client.log")
@@ -19,7 +20,8 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 def main():
-    while True:
+    restart=True
+    while restart:
         logger.info("[CLIENT STARTED] Attempting to connect to the server.")
         global client_socket
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -41,7 +43,12 @@ def main():
                 logger.info("Handshake successful.")
                 print("Handshake successful.")
                 userid = input("Username: ")
-                pwd = input("Password: ")
+                # pwd = input("Password: ")
+                 # to hide the password
+ 
+# masking the password
+                pwd = maskpass.askpass(mask="*")  
+                print(pwd)
 
                 client_socket.send(userid.encode('utf-8'))
                 password_response = client_socket.recv(1024).decode('utf-8')
@@ -50,11 +57,12 @@ def main():
                     correct_pwd = password_response.split(":")[1].strip()
 
                     if pwd == correct_pwd:
+                        
                         print("Login successful.")
                         logger.info(f"[LOGIN SUCCESS] UserID: {userid}")
                         client_socket.send("Password Match".encode("utf-8"))
                         count = 0
-                        while True:
+                        while restart:
                             print("1.Upload\t2.Download\t3.Preview(First 1024 bytes only)\t4.Delete File\t5. List Directory\t6.Exit")
                             choice = input("Enter your choice: ")
                             client_socket.send(choice.encode('utf-8'))
@@ -78,15 +86,25 @@ def main():
                                     upload_file(client_socket, file_name, count)
                                     logger.info(f"File uploaded: {file_name}")
                                 elif choice == '2':
-                                    file_name = input("Enter the file name to download (with full path): ")
+                                    response = client_socket.recv(4096).decode('utf-8')
+                                    print(response)
+                                    file_name = input("Enter the file name to download: ")
                                     download_dir = input("Enter the directory to save the file: ")
-                                    download_file(client_socket, file_name, download_dir)
+                                    download_file(client_socket, file_name, download_dir, userid)
                                     logger.info(f"File downloaded: {file_name}")
                                 elif choice == '3':
                                     file_path = input("Enter the path of the file to preview: ")
                                     preview_file(client_socket, file_path)
                                     logger.info(f"File previewed: {file_path}")
                                 elif choice == '4':
+                                    print("Directory listing:")
+                                    response = client_socket.recv(4096).decode('utf-8')
+                                    if response =="No files available.":
+                                        print(response)
+                                        continue
+                                    print(response)
+                                    logger.info(f"directory listed")
+
                                     file_name = input("Enter the name of the file to delete: ")
                                     client_socket.send(file_name.encode('utf-8'))
                                     response = client_socket.recv(1024).decode('utf-8')
@@ -100,7 +118,8 @@ def main():
                                 elif choice == '6':
                                     print("Exiting the client.")
                                     logger.info("Exiting the client.")
-                                    break
+                                    restart=False
+                                    # break
                                 else:
                                     print("Invalid choice. Please select from 1 to 6.")
                                     logger.warning(f"Invalid choice: {choice}")
@@ -121,9 +140,9 @@ def main():
         finally:
             client_socket.close()
             logger.info("Client socket closed.")
-        retry = input("Do you want to try logging in again? (yes/no): ").strip().lower()
-        if retry != 'yes':
-            break
+        # retry = input("Do you want to try logging in again? (yes/no): ").strip().lower()
+        # if retry != 'yes':
+        #     break
 
 if __name__ == "__main__":
     main()

@@ -1,2 +1,4 @@
 __pycache__
 server_storage
+logs
+.venv
