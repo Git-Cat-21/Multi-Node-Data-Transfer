@@ -259,3 +259,22 @@
 2024-11-16 20:54:54,439 - ClientLogger - INFO - File previewed: received_file1.txt
 2024-11-16 20:54:57,910 - ClientLogger - INFO - Exiting the client.
 2024-11-16 20:54:57,910 - ClientLogger - INFO - Client socket closed.
+2024-11-18 08:00:48,214 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-18 08:00:48,216 - ClientLogger - INFO - Connected to the server.
+2024-11-18 08:00:48,218 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-18 08:00:48,218 - ClientLogger - INFO - Handshake successful.
+2024-11-18 08:00:51,378 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-18 08:00:58,155 - ClientLogger - INFO - File previewed: received_file1.txt
+2024-11-18 08:01:15,515 - ClientLogger - INFO - File previewed: id_passwd.txt
+2024-11-18 08:01:20,268 - ClientLogger - INFO - Exiting the client.
+2024-11-18 08:01:20,268 - ClientLogger - INFO - Client socket closed.
+2024-11-18 15:31:59,045 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-18 15:31:59,047 - ClientLogger - INFO - Connected to the server.
+2024-11-18 15:31:59,049 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-18 15:31:59,049 - ClientLogger - INFO - Handshake successful.
+2024-11-18 15:32:02,679 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-18 15:32:04,847 - ClientLogger - INFO - directory listed
+2024-11-18 15:32:13,870 - ClientLogger - INFO - File previewed: received_file1.txt
+2024-11-18 15:32:22,555 - ClientLogger - INFO - directory listed
+2024-11-18 15:32:29,589 - ClientLogger - INFO - File previewed: sample.txt
+2024-11-18 15:32:46,636 - ClientLogger - INFO - File previewed: received_file1.txt

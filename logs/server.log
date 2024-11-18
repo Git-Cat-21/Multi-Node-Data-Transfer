@@ -381,3 +381,50 @@
 2024-11-16 20:47:46,240 - ServerLogger - ERROR - [INVALID FILE PATH] Invalid file path, outside of user's directory. C:\PES University\5th Sem\BD\EC-Team-16-distributed-file-orchestration-and-synchronization\id_passwd.txt is not allowed.
 2024-11-16 20:49:26,253 - ServerLogger - WARNING - [TIMEOUT] ('127.0.0.1', 51883) inactive for 100 seconds.
 2024-11-16 20:49:26,254 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 51883) disconnected.
+2024-11-16 20:54:15,719 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-16 20:54:23,487 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 52081).
+2024-11-16 20:54:23,488 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 52081) connected.
+2024-11-16 20:54:23,488 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 52081).
+2024-11-16 20:54:23,488 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 52081).
+2024-11-16 20:54:26,758 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-16 20:54:26,759 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-16 20:54:29,736 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 52081).
+2024-11-16 20:54:35,545 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of id_passwd.txt to ('127.0.0.1', 52081).
+2024-11-16 20:54:38,107 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 52081).
+2024-11-16 20:54:40,473 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of sample.txt to ('127.0.0.1', 52081).
+2024-11-16 20:54:45,200 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 52081).
+2024-11-16 20:54:54,438 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of received_file1.txt to ('127.0.0.1', 52081).
+2024-11-16 20:54:57,909 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 6 from ('127.0.0.1', 52081).
+2024-11-16 20:54:57,910 - ServerLogger - INFO - [CLIENT EXIT] ('127.0.0.1', 52081) requested to exit.
+2024-11-16 20:54:57,910 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 52081) disconnected.
+2024-11-18 08:00:41,251 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-18 08:00:48,216 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 53680).
+2024-11-18 08:00:48,217 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 53680) connected.
+2024-11-18 08:00:48,218 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 53680).
+2024-11-18 08:00:48,218 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 53680).
+2024-11-18 08:00:51,366 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-18 08:00:51,379 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-18 08:00:52,688 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 53680).
+2024-11-18 08:00:58,145 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of received_file1.txt to ('127.0.0.1', 53680).
+2024-11-18 08:01:07,929 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 53680).
+2024-11-18 08:01:15,514 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of id_passwd.txt to ('127.0.0.1', 53680).
+2024-11-18 08:01:20,267 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 6 from ('127.0.0.1', 53680).
+2024-11-18 08:01:20,268 - ServerLogger - INFO - [CLIENT EXIT] ('127.0.0.1', 53680) requested to exit.
+2024-11-18 08:01:20,268 - ServerLogger - INFO - [DISCONNECTED] ('127.0.0.1', 53680) disconnected.
+2024-11-18 15:31:40,005 - ServerLogger - INFO - [SERVER STARTED] Listening on port 8888.
+2024-11-18 15:31:59,047 - ServerLogger - INFO - [CONNECTION ACCEPTED] Connection from ('127.0.0.1', 57156).
+2024-11-18 15:31:59,048 - ServerLogger - INFO - [NEW CONNECTION] ('127.0.0.1', 57156) connected.
+2024-11-18 15:31:59,049 - ServerLogger - DEBUG - [WELCOME MESSAGE SENT] To ('127.0.0.1', 57156).
+2024-11-18 15:31:59,049 - ServerLogger - DEBUG - Received handshake from ('127.0.0.1', 57156).
+2024-11-18 15:32:02,669 - ServerLogger - INFO - [USER LOGIN ATTEMPT] UserID: user1
+2024-11-18 15:32:02,679 - ServerLogger - INFO - [LOGIN SUCCESS] User user1 logged in.
+2024-11-18 15:32:04,846 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 5 from ('127.0.0.1', 57156).
+2024-11-18 15:32:04,847 - ServerLogger - INFO - [LIST REQUEST] Sent directory listing to ('127.0.0.1', 57156).
+2024-11-18 15:32:07,833 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 57156).
+2024-11-18 15:32:13,859 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of received_file1.txt to ('127.0.0.1', 57156).
+2024-11-18 15:32:22,554 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 5 from ('127.0.0.1', 57156).
+2024-11-18 15:32:22,555 - ServerLogger - INFO - [LIST REQUEST] Sent directory listing to ('127.0.0.1', 57156).
+2024-11-18 15:32:26,864 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 57156).
+2024-11-18 15:32:29,587 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of sample.txt to ('127.0.0.1', 57156).
+2024-11-18 15:32:42,133 - ServerLogger - DEBUG - [REQUEST RECEIVED] Choice: 3 from ('127.0.0.1', 57156).
+2024-11-18 15:32:46,634 - ServerLogger - INFO - [PREVIEW REQUEST] Sending preview of received_file1.txt to ('127.0.0.1', 57156).
