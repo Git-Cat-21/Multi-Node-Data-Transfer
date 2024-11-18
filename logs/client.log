@@ -278,3 +278,115 @@
 2024-11-18 15:32:22,555 - ClientLogger - INFO - directory listed
 2024-11-18 15:32:29,589 - ClientLogger - INFO - File previewed: sample.txt
 2024-11-18 15:32:46,636 - ClientLogger - INFO - File previewed: received_file1.txt
+2024-11-18 23:22:59,910 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-18 23:22:59,910 - ClientLogger - INFO - Connected to the server.
+2024-11-18 23:22:59,911 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-18 23:22:59,911 - ClientLogger - INFO - Handshake successful.
+2024-11-18 23:23:03,469 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-18 23:23:11,431 - ClientLogger - INFO - File previewed: received_file1.txt
+2024-11-18 23:23:16,875 - ClientLogger - INFO - Exiting the client.
+2024-11-18 23:23:16,876 - ClientLogger - INFO - Client socket closed.
+2024-11-18 23:23:35,816 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-18 23:23:35,816 - ClientLogger - INFO - Connected to the server.
+2024-11-18 23:23:35,817 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-18 23:23:35,817 - ClientLogger - INFO - Handshake successful.
+2024-11-18 23:23:40,711 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-18 23:23:54,909 - ClientLogger - INFO - directory listed
+2024-11-18 23:23:57,730 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-18 23:23:57,730 - ClientLogger - INFO - Client socket closed.
+2024-11-18 23:23:59,718 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-18 23:23:59,718 - ClientLogger - INFO - Connected to the server.
+2024-11-18 23:23:59,719 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-18 23:23:59,719 - ClientLogger - INFO - Handshake successful.
+2024-11-18 23:24:02,476 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-18 23:24:07,629 - ClientLogger - INFO - File previewed: received_file2.go
+2024-11-18 23:24:12,689 - ClientLogger - INFO - Exiting the client.
+2024-11-18 23:24:12,689 - ClientLogger - INFO - Client socket closed.
+2024-11-18 23:47:05,579 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-18 23:47:05,579 - ClientLogger - INFO - Connected to the server.
+2024-11-18 23:47:05,580 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-18 23:47:05,580 - ClientLogger - INFO - Handshake successful.
+2024-11-18 23:47:15,674 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:10:49,083 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:10:49,083 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:11:25,165 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:11:30,300 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:11:30,300 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:11:30,300 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:11:30,301 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:11:32,872 - ClientLogger - WARNING - [LOGIN FAILED] Incorrect password for UserID: ser1.
+2024-11-19 00:11:32,872 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:11:32,872 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:11:32,872 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:11:32,873 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:11:32,874 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:11:36,579 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:11:50,365 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:12:44,598 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:12:44,598 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:12:44,599 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:12:44,599 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:12:50,089 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:14:02,475 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:14:02,475 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:14:08,090 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:14:08,090 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:14:08,091 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:14:08,091 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:14:13,418 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:14:38,181 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:14:38,182 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:14:40,454 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:14:40,454 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:14:40,455 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:14:40,455 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:14:44,170 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:20:03,635 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:20:03,636 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:20:07,828 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:20:07,828 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:20:07,829 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:20:07,829 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:20:12,698 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:21:27,881 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:21:27,881 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:21:29,544 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:21:29,544 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:21:29,544 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:21:29,545 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:21:32,068 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:21:38,832 - ClientLogger - INFO - File uploaded: sample.txt
+2024-11-19 00:21:42,714 - ClientLogger - INFO - directory listed
+2024-11-19 00:22:01,216 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:22:01,217 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:24:19,132 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:24:19,132 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:24:19,132 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:24:19,133 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:24:23,365 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:24:50,354 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:24:50,354 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:24:52,091 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:24:52,092 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:24:52,092 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:24:52,093 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:24:55,473 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user2
+2024-11-19 00:25:10,422 - ClientLogger - INFO - File downloaded: wiw.txt
+2024-11-19 00:28:05,382 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:28:05,383 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:28:10,016 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:28:10,016 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:28:10,018 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:28:10,018 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:28:15,714 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:30:31,758 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:31:53,712 - ClientLogger - INFO - [CLIENT SHUTDOWN] Signal received, closing client socket.
+2024-11-19 00:31:53,712 - ClientLogger - INFO - Client socket closed.
+2024-11-19 00:31:59,136 - ClientLogger - INFO - [CLIENT STARTED] Attempting to connect to the server.
+2024-11-19 00:31:59,136 - ClientLogger - INFO - Connected to the server.
+2024-11-19 00:31:59,137 - ClientLogger - DEBUG - Server message: You are now connected to the server.
+2024-11-19 00:31:59,137 - ClientLogger - INFO - Handshake successful.
+2024-11-19 00:32:03,703 - ClientLogger - INFO - [LOGIN SUCCESS] UserID: user1
+2024-11-19 00:32:58,577 - ClientLogger - INFO - directory listed
+2024-11-19 00:33:02,203 - ClientLogger - INFO - Exiting the client.
+2024-11-19 00:33:02,203 - ClientLogger - INFO - Client socket closed.

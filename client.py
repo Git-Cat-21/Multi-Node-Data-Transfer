@@ -74,9 +74,6 @@ def main():
                                     print("\n[TIMEOUT] You have been logged out due to inactivity.")
                                     break  # Exit the input loop on timeout
                                 
-                                #if timeout_message == "PROCEED":
-                                #    print("[DEBUG] Server ready to proceed.")
-
                                 if choice == '1':
                                     file_name = input("Enter the file location (or type 'exit' to cancel upload): ")
                                     if file_name.lower() == 'exit':
@@ -93,9 +90,10 @@ def main():
                                     download_file(client_socket, file_name, download_dir, userid)
                                     logger.info(f"File downloaded: {file_name}")
                                 elif choice == '3':
-                                    file_path = input("Enter the path of the file to preview: ")
-                                    preview_file(client_socket, file_path)
-                                    logger.info(f"File previewed: {file_path}")
+                                    response = client_socket.recv(4096).decode('utf-8')
+                                    print(response)
+                                    file_name = input("Enter the file name to download: ")
+                                    preview_file(client_socket, file_name,userid)
                                 elif choice == '4':
                                     print("Directory listing:")
                                     response = client_socket.recv(4096).decode('utf-8')
@@ -140,9 +138,6 @@ def main():
         finally:
             client_socket.close()
             logger.info("Client socket closed.")
-        # retry = input("Do you want to try logging in again? (yes/no): ").strip().lower()
-        # if retry != 'yes':
-        #     break
 
 if __name__ == "__main__":
     main()

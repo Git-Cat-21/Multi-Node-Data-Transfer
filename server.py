@@ -3,7 +3,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 from file_upload import recv_file
 from file_download import send_file
-from file_preview import read_file
+from file_preview import send_preview
 from file_delete import delete_file
 from threading import Semaphore
 import signal
@@ -26,17 +26,6 @@ def signal_handler(sig, frame):
     sys.exit(0)
 
 signal.signal(signal.SIGINT, signal_handler)
-
-def validate_file_path(user_dir, file_path):
-    abs_path = os.path.abspath(os.path.join(user_dir, file_path))
-    path = abs_path.strip().split("\\")
-    user = user_dir.strip().split("\\")
-    if user[1] not in path :
-        raise ValueError(f"Invalid file path, outside of user's directory. {file_path} is not allowed.")
-    
-    return abs_path
-
-
 
 def handle_client(client_socket, addr):
     logger.info(f"[NEW CONNECTION] {addr} connected.")
@@ -121,15 +110,27 @@ def handle_client(client_socket, addr):
                                 logger.error(f"[ERROR] File '{file_path}' not found.")
 
                         elif choice == '3':
-                            file_path = client_socket.recv(1024).decode('utf-8') 
+                            files = os.listdir(user_dir)
+                            files_list = "\n".join(files) if files else "No files available."
+                            client_socket.send(files_list.encode('utf-8'))
+                            print(f"[LIST] Directory listing sent to {addr}")
+
+                            file_path = client_socket.recv(1024).decode('utf-8')
+                            print(f"[PREVIEW REQUEST] Received file path: {file_path}")
+
+                            if not file_path.startswith(f"./server_storage/{userid}/"):
+                                client_socket.send(b"Error: Unauthorized access.")  
+                                print(f"[ERROR] Unauthorized access attempt by {addr}.")
+                                logger.error(f"[ERROR] Unauthorized access attempt by {addr}.")
+                                return
+
                             try:
-                                validated_path = validate_file_path(user_dir, file_path) 
-                                logger.info(f"[PREVIEW REQUEST] Sending preview of {file_path} to {addr}.")
-                                print(f"[PREVIEW REQUEST] Sending file {file_path} to {addr}")
-                                read_file(client_socket, validated_path)  
-                            except ValueError as e:
-                                client_socket.send(f"Error: {e}".encode('utf-8'))
-                                logger.error(f"[INVALID FILE PATH] {e}")
+                                send_preview(client_socket, file_path)
+                            except Exception as e:
+                                error_message = f"Error: {e}"
+                                client_socket.send(error_message.encode('utf-8'))
+                                print(f"[ERROR] {e}")
+
                         elif choice =='4':
                             files = os.listdir(user_dir)
                             files_list = "\n".join(files) if files else "No files available."
