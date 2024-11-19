@@ -8,13 +8,12 @@ This project implements a client-server application to manage file operations su
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Architecture](#architecture)
-4. [System Requirements](#system-requirements)
-5. [Installation](#installation)
-6. [Usage](#usage)
-7. [File Descriptions](#file-descriptions)
-8. [Logging](#logging)
-9. [Error Handling](#error-handling)
-10. [Future Enhancements](#future-enhancements)
+4. [Requirements](#requirements)
+5. [Usage](#usage)
+6. [File Descriptions](#file-descriptions)
+7. [Logging](#logging)
+8. [Error Handling](#error-handling)
+9. [Future Enhancements](#future-enhancements)
 
 ---
 
@@ -47,32 +46,14 @@ The file management system allows clients to connect to a server, authenticate t
    - Handles concurrency and ensures secure file access.
 
 ---
-
-## System Requirements
-- **Python Version**: Python 3.7 or above.
-- **Libraries**:
-  - `socket`
-  - `os`
-  - `signal`
-  - `sys`
-  - `time`
-  - `concurrent.futures`
-  - `maskpass`
-  - Custom modules: `file_upload`, `file_download`, `file_preview`, `file_delete`, `logger_util`
-
 ---
 
-## Installation
-1. Clone the repository:
+## Requirements
+1. Install dependencies:
    ```bash
-   git clone https://github.com/your-repo/file-management-system.git
-   cd file-management-system
+   pip install -r requirements.txt
    ```
-2. Install dependencies:
-   ```bash
-   pip install maskpass
-   ```
-3. Create the directory structure:
+2. Create the directory structure:
    ```bash
    mkdir -p server_storage logs
    touch id_passwd.txt
@@ -85,14 +66,14 @@ The file management system allows clients to connect to a server, authenticate t
 ### Running the Server
 1. Start the server:
    ```bash
-   python server.py
+   python3 server.py
    ```
 2. The server listens on `127.0.0.1:8888` and logs activities in `logs/server.log`.
 
 ### Running the Client
 1. Start the client:
    ```bash
-   python client.py
+   python3 client.py
    ```
 2. Follow the prompts for authentication and file operations.
 
@@ -105,6 +86,18 @@ The file management system allows clients to connect to a server, authenticate t
   user4:hello4
   user5:hello5
   ```
+
+### Concurrent Execution of Multiple Clients
+
+To observe how concurrent execution of multiple clients works, follow these steps:
+
+1. Open **3 other terminal windows**.
+2. Start the client program in each terminal using the command:
+   ```bash
+   python3 client.py
+   ```
+3. You will notice that the server accepts only 2 clients at a time because the concurrent client limit in threading is set to 2.
+4. The 3rd client will have to wait until one of the active clients exits. Once a client exits, the waiting client is given a chance to connect to the server.
 
 ### File Operations
 1. **Upload**: Upload a file to the server.
