@@ -31,7 +31,7 @@ The file management system allows clients to connect to a server, authenticate t
   - Delete
   - Directory listing
 - **Timeout**: Clients inactive for a specified duration (`100` seconds) are automatically disconnected.
-- **Concurrency**: The server handles multiple clients concurrently using semaphores and thread pool.
+- **Concurrency**: The server handles 2 clients concurrently using semaphores and thread pool(the 3rd client has to wait until one of the 2 clients exits).
 - **Logging**: Both client and server activities are logged for monitoring and debugging purposes.
 
 ---
