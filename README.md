@@ -156,6 +156,12 @@ The file management system allows clients to connect to a server, authenticate t
 
 ---
 
+## Future Enhancements
+1. **Encryption**: Secure file transfers using encryption.
+2. **Web Interface**: Add a graphical user interface for ease of use.
+3. **File Search**: Implement a search feature to locate files in directories.
+4. **Session Management**: Add session tokens for enhanced authentication.
 
+--- 
 
 
