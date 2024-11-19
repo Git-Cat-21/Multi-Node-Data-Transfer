@@ -1,5 +1,7 @@
 # EC-Team-16-distributed-file-orchestration-and-synchronization
 
+### BD Project
+
 This project implements a client-server application to manage file operations such as upload, download, preview, delete, and directory listing. The system supports multiple clients and ensures secure access to user directories.
 
 ---
